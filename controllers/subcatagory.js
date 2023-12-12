@@ -47,9 +47,10 @@ exports.DeletesubCatagory = async function (req,res,next) {
 }
 exports.PutsubCatagory = async function (req,res,next) {
     try {
-        await SUBCATAGORY.findByIdAndUpdate(req.body.id , req.body)
+        const psub=await SUBCATAGORY.findByIdAndUpdate(req.body.id,req.body)
         res.status(202).json({
-            message:"Update All Data"
+            message:"Update All Data",
+            psub:psub
         })
     } catch (error) {
         res.status(404).json({

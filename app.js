@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://127.0.0.1:27017/W3school')
+mongoose.connect('mongodb+srv://pumbhadiyadivyesh:admin@cluster0.ajkbwjj.mongodb.net/W3School?retryWrites=true&w=majority')
   .then(() => console.log('Connected!'))
   .catch((error)=>{
     console.log(error.message)

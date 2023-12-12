@@ -20,7 +20,7 @@ exports.Getcataory = async function (req,res,next) {
     
     try {
         const data = await CATAGORY.find()
-    res.status.json({
+        res.status(202).json({
         message:"Data Find",
         data
     })
@@ -45,11 +45,12 @@ exports.Deletcatagory = async function (req,res,next) {
     }
 }
 
-exports.Updatecatagory = async function (res,req,next) {
+exports.Updatecatagory = async function (req,res,next) {
     try {
-        await CATAGORY.findByIdAndUpdate(req.query.id , req.body)
+       const data=await CATAGORY.findByIdAndUpdate(req.query.id , req.body)
         res.status(202).json({
-            message:"Update All Data"
+            message:"Update All Data",
+            data
         })
     } catch (error) {
         res.status(404).json({
